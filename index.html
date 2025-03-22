@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Pessoas</title>
+        <link rel="stylesheet" href="./src/styles/styles.css">
+    </head>
+
+    <body>
+        <header class="header-background">
+            <h1>Compass Uol PB - Sprint 1</h1>
+        </header>
+        <div class="conteudo">
+            <div class="container">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#" onclick="mostrarSecao('cadastrar')">Cadastrar</a></li>
+                        <li><a href="#" onclick="mostrarSecao('consultar')">Consultar</a></li>
+                    </ul>
+                </nav>
+
+                <div id="cadastrar" class="secao active">
+                    <h1>Cadastro de Pessoas</h1>
+                    <form id="cadastroForm" onsubmit="return validarFormulario()">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" autocomplete="name" required>
+                            <div class="error-message" id="nomeError" style="display:none;"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataNascimento">Data de Nascimento: </label>
+                            <input type="date" id="dataNascimento" name="dataNascimento" autocomplete="bday" required>
+                            <div class="error-message" id="dataNascimentoError" style="display:none;"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" autocomplete="tel"
+                                oninput="formatarTelefone(this)" required>
+                            <div class="error-message" id="telefoneError" style="display:none;"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                            <div class="error-message" id="emailError" style="display:none;"></div>
+                        </div>
+                        <button type="submit" class="btn">Cadastrar Usuário!</button>
+                        <button type="button" class="btn"
+                            onclick="document.getElementById('cadastroForm').reset(); clearErrors();">Limpar</button>
+                    </form>
+                    <div class="centralizar" id="mensagemSucesso"></div>
+                    <div class="error-message" id="mensagemErroCadastro" style="display:none;"></div>
+                </div>
+
+                <div id="consultar" class="secao">
+                    <h2>Pessoas Cadastradas</h2>
+                    <div class="form-group">
+                        <label for="emailConsulta" id="labelemailConsulta">E-mail:</label>
+                        <input type="text" id="emailConsulta" name="emailConsulta"
+                            placeholder="Digite o e-mail para consultar">
+                    </div>
+                    <div class="botao-container">
+                        <button id="btnConsultar" type="button" class="btn" onclick="consultar(true)">Pesquisar
+                            Usuário!</button>
+                        <button type="button" class="btn"
+                            onclick="document.getElementById('emailConsulta').value=''; document.getElementById('listaResultados').innerHTML=''; clearErrors();">Limpar</button>
+                        <button id="btnAtualizar" type="button" class="btn" onclick="prepararAtualizacao()">Atualizar
+                            Dados</button>
+                    </div>
+
+                    <div class="centralizar">
+                        <ul id="listaResultados"></ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div id="atualizar" class="secao" style="display: none;">
+                <h1>Atualizar Dados do Usuário</h1>
+                <form id="atualizarForm" onsubmit="return validarFormulario(true)">
+                    <div class="form-group">
+                        <label for="atualizar_nome">Nome:</label>
+                        <input type="text" id="atualizar_nome" name="nome" autocomplete="name" required>
+                        <div class="error-message" id="atualizar_nomeError" style="display:none;"></div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="atualizar_dataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="atualizar_dataNascimento" name="dataNascimento" autocomplete="bday"
+                            required>
+                        <div class="error-message" id="atualizar_dataNascimentoError" style="display:none;"></div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="atualizar_telefone">Telefone:</label>
+                        <input type="tel" id="atualizar_telefone" name="telefone" autocomplete="tel"
+                            oninput="formatarTelefone(this)" required>
+                        <div class="error-message" id="atualizar_telefoneError" style="display:none;"></div>
+
+                    </div>
+                    <button type="submit" class="btn">Atualizar Usuário!</button>
+                    <button type="button" class="btn"
+                        onclick="document.getElementById('atualizarForm').reset(); clearErrors();">Limpar</button>
+                </form>
+                <div class="centralizar" id="mensagemSucessoAtualizar" style="display: none;"></div>
+                <div class="error-message" id="mensagemErroAtualizacao" style="display:none;"></div>
+            </div>
+
+        </div>
+        </div>
+
+        <footer class="footer">
+            <h2>Autor: Talita Mendonça Marques</h2>
+        </footer>
+
+        <script type="module" src="./src/scripts/index.js"></script>
+    </body>
+
+</html>
