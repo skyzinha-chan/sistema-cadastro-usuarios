@@ -2,7 +2,7 @@
 
 Este projeto consiste em um **sistema de cadastro de usuários** desenvolvido em JavaScript. Ele permite o **armazenamento**, **consulta** e **deleção e atualização de informações pessoais**, utilizando tecnologias modernas e boas práticas de desenvolvimento.
 
-![Tela do Sistema](https://github.com/skyzinha-chan/sistema-cadastro-usuarios/root/src/assets/images/modelo%20cadastro.png)
+![Tela do Sistema](https://github.com/skyzinha-chan/sistema-cadastro-usuarios/blob/a6de30ff252ec1b5a710bf2bf1193c0973fd990f/src/assets/images/modelo%20cadastro.png)
 
 ### Tecnologias Utilizadas
 - **HTML**: Criação da interface do usuário.
