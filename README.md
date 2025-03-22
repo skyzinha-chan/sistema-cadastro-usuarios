@@ -104,7 +104,7 @@ Embora a funcionalidade básica do sistema esteja concluída, ainda há oportuni
 Siga as instruções abaixo para executar o projeto:
 1. Clone este repositório em sua máquina:
    ```bash
-   git clone <URL-do-repositório> 
+   git clone https://github.com/skyzinha-chan/sistema-cadastro-usuarios.git
    ```
 
 2. Abra o arquivo `index.html` em um navegador.
